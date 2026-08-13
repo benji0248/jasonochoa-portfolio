@@ -13,7 +13,10 @@ import { nav, site } from "../data/site";
     </div>
     <nav class="footer-nav" aria-label="Pie de página">
       {nav.map((item) => <a href={item.href}>{item.label}</a>)}
-      <a href={site.cipecc} rel="noopener noreferrer">CIPECC</a>
+      <a href={site.cipecc} target="_blank" rel="noopener noreferrer">
+        CIPECC
+        <span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+      </a>
     </nav>
   </div>
 </footer>

@@ -37,9 +37,17 @@ const current = Astro.url.pathname;
   const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
   const navEl = document.querySelector<HTMLElement>(".nav");
 
+  const setOpen = (open: boolean) => {
+    navEl?.classList.toggle("is-open", open);
+    toggle?.setAttribute("aria-expanded", String(open));
+    if (toggle) toggle.textContent = open ? "Cerrar" : "Menú";
+  };
+
   toggle?.addEventListener("click", () => {
-    const open = navEl?.classList.toggle("is-open") ?? false;
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.textContent = open ? "Cerrar" : "Menú";
+    setOpen(!navEl?.classList.contains("is-open"));
+  });
+
+  navEl?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
   });
 </script>
