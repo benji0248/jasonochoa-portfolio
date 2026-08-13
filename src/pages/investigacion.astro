@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { academicActivities, societies, site } from "../data/site";
+---
+
+<BaseLayout
+  title={`Investigación y actividad científica | ${site.name}`}
+  description="Línea de investigación en neurodesarrollo, sociedades científicas y actividad académica de Jason Ochoa."
+  path="/investigacion"
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Investigación y actividad científica</p>
+      <h1>Clínica, universidad y sociedades</h1>
+      <p class="lede prose-width">
+        La actividad académica se sostiene en una línea de investigación sobre
+        neurodesarrollo y en la participación en sociedades científicas. Mientras
+        no exista un listado verificable de artículos, esta página no se presenta
+        como un repositorio de publicaciones.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Universidad Metropolitana</p>
+        <h2>Línea de investigación</h2>
+        <p>
+          Desarrolla una línea de investigación relacionada principalmente con
+          trastorno del espectro autista, TDAH, neurodesarrollo, y variables
+          clínicas y psicoeducativas.
+        </p>
+        <p class="muted">
+          El listado de artículos y proyectos específicos se incorporará cuando
+          esté documentado.
+        </p>
+      </div>
+      <article class="card">
+        <h3>Qué se investiga</h3>
+        <ul>
+          <li>Trastorno del espectro autista</li>
+          <li>TDAH</li>
+          <li>Neurodesarrollo</li>
+          <li>Variables clínicas</li>
+          <li>Variables psicoeducativas</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Sociedades científicas</p>
+        <h2>Participación profesional</h2>
+      </div>
+      <div class="grid-2">
+        {
+          societies.map((society) => (
+            <article class="society">
+              <p class="meta">{society.role}</p>
+              <h3>{society.name}</h3>
+              <p>{society.detail}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Cronología académica ampliada</p>
+        <h2>Actividades relevantes</h2>
+        <p class="muted">
+          Estas actividades documentan un tramo de formación y actualización. No
+          se presentan como credenciales principales.
+        </p>
+      </div>
+      <ol class="timeline">
+        {
+          academicActivities.map((item) => (
+            <li class="timeline-item">
+              <h3>{item.title}</h3>
+              <p class="muted">
+                {item.place} · {item.year}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

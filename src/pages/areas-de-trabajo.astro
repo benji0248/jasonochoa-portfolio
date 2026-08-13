@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  audiences,
+  axes,
+  clinicalAreas,
+  populations,
+  programs,
+  site,
+} from "../data/site";
+---
+
+<BaseLayout
+  title={`Áreas de trabajo | ${site.name}`}
+  description="Neuropsicología, Terapia Cognitivo-Conductual y neurodesarrollo como un mismo modelo de evaluación e intervención."
+  path="/areas-de-trabajo"
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Áreas de trabajo</p>
+      <h1>Evaluar e intervenir sobre el mismo perfil</h1>
+      <p class="lede prose-width">
+        La evaluación neuropsicológica no se entiende como un proceso aislado del
+        tratamiento. Sirve para conceptualizar cómo funcionan la cognición, la
+        emoción, la conducta y el desarrollo, y para adaptar la intervención a
+        ese perfil.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="axes">
+        {
+          axes.map((axis) => (
+            <article class="axis">
+              <h3>{axis.title}</h3>
+              <p>{axis.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Ciclo vital</p>
+        <h2>Niños, adolescentes y adultos</h2>
+        <p>
+          El trabajo clínico recorre distintas etapas de la vida, con especial
+          atención a personas con trastornos del neurodesarrollo.
+        </p>
+        <ul class="chip-row">
+          {populations.map((item) => <li class="chip">{item}</li>)}
+        </ul>
+        <h3>Áreas frecuentes</h3>
+        <ul class="chip-row">
+          {clinicalAreas.map((item) => <li class="chip">{item}</li>)}
+        </ul>
+      </div>
+      <article class="card">
+        <h3>TDAH y autorregulación</h3>
+        <p>
+          En las dificultades conductuales y ejecutivas asociadas al TDAH, el
+          trabajo se apoya en principios y conceptualizaciones vinculadas con
+          Russell Barkley: inhibición, autorregulación, manejo conductual,
+          funciones ejecutivas, entrenamiento a padres y contingencias
+          ambientales.
+        </p>
+        <p class="muted">
+          Esta referencia conceptual no se presenta como una certificación
+          específica.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Programas de intervención</p>
+        <h2>Lo que organiza la práctica actual</h2>
+      </div>
+      <div class="grid-3">
+        {
+          programs.map((program) => (
+            <article class="program">
+              <h3>{program.title}</h3>
+              <p>{program.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Con quién trabaja</p>
+        <h2>Clínica, familias, profesionales e instituciones</h2>
+      </div>
+      <div class="grid-2">
+        {
+          audiences.map((audience) => (
+            <article class="audience">
+              <h3>{audience.title}</h3>
+              <p>{audience.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

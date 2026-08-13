@@ -1,0 +1,187 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import portrait from "../assets/images/jason-ochoa.jpg";
+import { currentRoles, philosophy, site } from "../data/site";
+---
+
+<BaseLayout
+  title={`Sobre mí | ${site.name}`}
+  description="Trayectoria de Jason Ochoa: de la clínica y la TCC a la neuropsicología, el neurodesarrollo, la dirección clínica y la formación de profesionales."
+  path="/sobre-mi"
+>
+  <section class="page-hero">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Sobre mí</p>
+        <h1>Comprender el funcionamiento para adaptar la intervención</h1>
+      </div>
+      <p class="lede">
+        Jason Ochoa es psicólogo, mención clínica, neuropsicólogo y psicoterapeuta
+        cognitivo-conductual. Su trabajo une evaluación, tratamiento, docencia y
+        dirección clínica alrededor de un mismo problema: cómo funciona una
+        persona y qué necesita su contexto para sostener el cambio.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <figure class="portrait">
+        <Image
+          src={portrait}
+          alt="Retrato editorial de Jason Ochoa"
+          widths={[480, 800, 1100]}
+          sizes="(max-width: 900px) 92vw, 42vw"
+          quality={70}
+          format="avif"
+        />
+      </figure>
+      <div class="prose-width">
+        <p>
+          La Terapia Cognitivo-Conductual no es una especialidad reciente en esta
+          trayectoria. Está presente desde la formación universitaria y el trabajo
+          de grado, que utilizó una intervención basada en Terapia Racional Emotiva
+          Conductual con pacientes con quemaduras de segundo y tercer grado. Esa
+          experiencia marcó una orientación hacia intervenciones estructuradas y
+          basadas en evidencia.
+        </p>
+        <p>
+          En paralelo se consolidó el interés por la neuropsicología. La formación
+          práctica en el Hospital Universitario de Caracas, en el área de
+          Neuropsicología Clínica, inició un trabajo sostenido de evaluación,
+          especialmente en cuadros relacionados con deterioro cognitivo y
+          demencias, y abrió también el interés por la neuropediatría.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Evolución</p>
+        <h2>Cómo se fue construyendo el modelo actual</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Instituto Tobias</h3>
+          <p class="meta">Alrededor de 2015 · supervisión de Enza Mastropietro</p>
+          <p>
+            Uno de los momentos más importantes de su desarrollo como
+            neuropsicólogo. Allí realizó evaluaciones, construcción de perfiles
+            neurocognitivos, estimulación y rehabilitación cognitiva, con niños,
+            adultos y adultos mayores, tanto en trastornos del neurodesarrollo
+            como en enfermedades neurodegenerativas. También impartió actividades
+            formativas sobre evaluación y estimulación cognitiva.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Terapeutik</h3>
+          <p class="meta">Caracas · aproximadamente 2015–2016</p>
+          <p>
+            Etapa decisiva para el enfoque interdisciplinario. Trabajó junto a
+            terapeutas ocupacionales, terapeutas del lenguaje, psicopedagogos,
+            psicólogos, escuelas y equipos de orientación. Realizó intervenciones
+            conductuales y cognitivo-conductuales, terapias integradas,
+            adaptaciones curriculares y escolares, visitas a instituciones y
+            coordinación con equipos educativos.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Argentina</h3>
+          <p class="meta">Desde 2016</p>
+          <p>
+            Profundizó su formación en Terapia Cognitivo-Conductual
+            Infantojuvenil en la Fundación ETCI. Continuó formándose en
+            neuropsicología, autismo y psicología infantil, y participó en
+            actividades científicas y formativas de FLENI, incluyendo el Simposio
+            de Actualización en el Tratamiento de la Afasia. También tomó parte
+            en actividades académicas sobre clínica del autismo y psicosis
+            infantil.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Regreso a Venezuela</h3>
+          <p class="meta">Desde 2019</p>
+          <p>
+            Aumentó su actividad como psicoterapeuta, neuropsicólogo,
+            conferencista, formador y asesor de centros educativos. Comenzó a
+            transmitir lo aprendido en Argentina y a desarrollar programas de
+            formación en centros educativos y terapéuticos.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap split">
+      <blockquote class="pull">
+        El ESDM amplió una práctica que hasta entonces se había sostenido
+        sobre todo en TCC y técnicas conductuales.
+      </blockquote>
+      <div>
+        <p class="kicker">2021</p>
+        <h2>Un punto de inflexión en neurodesarrollo</h2>
+        <p>
+          En 2021 profundizó su formación internacional en intervención temprana,
+          autismo, evaluación diagnóstica, habilidades sociales, enseñanza
+          estructurada, mindfulness y neurodesarrollo.
+        </p>
+        <p>
+          La formación en Early Start Denver Model, en el UC Davis MIND Institute,
+          introdujo con más fuerza el desarrollo temprano, la comunicación social,
+          la atención conjunta, la interacción naturalista y el aprendizaje
+          dentro de contextos sociales. No sustituyó a la TCC: la obligó a
+          articularse con el perfil evolutivo de cada persona.
+        </p>
+        <p>
+          Esa línea se extendió después con TEACCH, PEERS®, ADI-R, Bayley-III,
+          Group-Based ESDM y, más adelante, formación en JASPER. El hilo
+          cognitivo-conductual, por su parte, continúa hoy en la Maestría en
+          Terapia Cognitivo Conductual de la Universidad de Palermo y en un
+          proceso formativo en el Beck Institute.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Hoy</p>
+        <h2>Cuatro roles simultáneos</h2>
+      </div>
+      <div class="grid-2">
+        {
+          currentRoles.map((role) => (
+            <article class="role">
+              <h3>{role.title}</h3>
+              <p>{role.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Filosofía clínica</p>
+        <h2>Criterios que organizan el trabajo</h2>
+      </div>
+      <div class="grid-2">
+        {
+          philosophy.map((item) => (
+            <article class="card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

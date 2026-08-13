@@ -1,0 +1,19 @@
+---
+import { nav, site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="serif" style="font-size: 1.15rem; color: var(--ink); margin-bottom: 0.35rem;">
+        {site.name}
+      </p>
+      <p>Neuropsicología · TCC · Neurodesarrollo</p>
+      <p>{site.location}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Pie de página">
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href={site.cipecc} rel="noopener noreferrer">CIPECC</a>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+---
+import { knowsAbout, site } from "../data/site";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  alternateName: site.fullName,
+  url: site.url,
+  image: new URL("/og.jpg", site.url).href,
+  email: site.email,
+  jobTitle: [
+    "Neuropsicólogo",
+    "Psicoterapeuta cognitivo-conductual",
+    "Director Clínico",
+    "Profesor universitario",
+  ],
+  description: site.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Caracas",
+    addressCountry: "VE",
+  },
+  affiliation: [
+    {
+      "@type": "Organization",
+      name: "CIPECC",
+      url: site.cipecc,
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad Metropolitana",
+      url: "https://www.unimet.edu.ve/",
+    },
+    {
+      "@type": "Organization",
+      name: "Federación de Psicólogos de Venezuela",
+    },
+  ],
+  knowsAbout: [...knowsAbout],
+  sameAs: [site.linkedin, site.unimetProfile],
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

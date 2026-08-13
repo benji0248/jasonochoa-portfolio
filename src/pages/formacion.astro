@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  additionalCredentials,
+  featuredCredentials,
+  site,
+} from "../data/site";
+---
+
+<BaseLayout
+  title={`Formación y credenciales | ${site.name}`}
+  description="Formación especializada de Jason Ochoa en TCC, neuropsicología y neurodesarrollo, con denominaciones exactas de cada credencial."
+  path="/formacion"
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Formación y credenciales</p>
+      <h1>Instituciones, programas y años</h1>
+      <p class="lede prose-width">
+        Las credenciales se presentan con la denominación de cada programa, no
+        como una galería de diplomas. Cuando una formación está en curso, se
+        indica con claridad.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <article class="card" style="margin-bottom: 1.5rem;">
+        <p class="kicker">Credencial principal</p>
+        <h2>Psicoterapeuta certificado</h2>
+        <p>
+          Psicoterapeuta certificado por la Asociación Venezolana de Psicoterapia,
+          con aval de la Federación Latinoamericana de Psicoterapia y el World
+          Council for Psychotherapy.
+        </p>
+        <p class="meta">Septiembre de 2025 · vigencia de cinco años desde la emisión.</p>
+      </article>
+
+      <div class="grid-2">
+        {
+          featuredCredentials
+            .filter((item) => !item.institution.includes("AVEPSI"))
+            .map((item) => (
+            <article class="credential">
+              <p class="meta">{item.institution}</p>
+              <h3>{item.program}</h3>
+              <p class="meta">
+                {item.year} · {item.type}
+              </p>
+              {item.note && <p>{item.note}</p>}
+              {item.status === "en-curso" && <p class="status">En curso</p>}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Otras formaciones</p>
+        <h2>Líneas que sostienen la práctica</h2>
+      </div>
+      <div class="grid-2">
+        {
+          additionalCredentials.map((item) => (
+            <article class="credential">
+              <p class="meta">{item.institution}</p>
+              <h3>{item.program}</h3>
+              <p class="meta">
+                {item.year} · {item.type}
+              </p>
+              {item.note && <p>{item.note}</p>}
+            </article>
+          ))
+        }
+      </div>
+      <p class="note">
+        No se utilizan denominaciones como terapeuta certificado en ESDM, JASPER
+        o Beck Institute, salvo acreditación formal específica. La TCC aparece
+        como hilo continuo: pregrado, trabajo de grado, Fundación ETCI, práctica
+        clínica, formación de profesionales, Universidad de Palermo y Beck
+        Institute.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

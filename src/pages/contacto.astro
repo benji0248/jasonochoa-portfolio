@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title={`Contacto | ${site.name}`}
+  description="Contacto profesional de Jason Ochoa para consulta, formación, docencia y actividad científica."
+  path="/contacto"
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Contacto</p>
+      <h1>Escribir para consulta, formación o colaboración</h1>
+      <p class="lede prose-width">
+        El correo público corresponde a su registro profesional. CIPECC es el
+        espacio institucional de su dirección clínica; esta página es el canal
+        personal.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <ul class="contact-list">
+        <li>
+          <p class="meta">Correo</p>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </li>
+        <li>
+          <p class="meta">LinkedIn</p>
+          <a href={site.linkedin} rel="noopener noreferrer">jasonochoagil</a>
+        </li>
+        <li>
+          <p class="meta">CIPECC</p>
+          <a href={site.cipecc} rel="noopener noreferrer">centrocipecc.com</a>
+        </li>
+        <li>
+          <p class="meta">Ciudad</p>
+          <p class="serif" style="font-size: 1.2rem;">{site.location}</p>
+        </li>
+      </ul>
+      <div>
+        <article class="card">
+          <h2>Para qué escribir</h2>
+          <p>Consulta clínica con niños, adolescentes o adultos.</p>
+          <p>Formación profesional, supervisión o actividades de TCC.</p>
+          <p>Asesoramiento a colegios y equipos terapéuticos.</p>
+          <p>Docencia, investigación o participación científica.</p>
+        </article>
+        <p class="note">
+          WhatsApp, redes adicionales y modalidades específicas de consulta se
+          publicarán cuando estén confirmados como canales oficiales.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

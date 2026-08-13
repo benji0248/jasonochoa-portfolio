@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+import PersonSchema from "../components/PersonSchema.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import portrait from "../assets/images/jason-ochoa.jpg";
+import {
+  authority,
+  axes,
+  hero,
+  site,
+  trajectoryBrief,
+} from "../data/site";
+---
+
+<BaseLayout path="/">
+  <PersonSchema slot="head" />
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Identidad profesional</p>
+        <h1>{hero.h1}</h1>
+        <p class="descriptor">{hero.descriptor}</p>
+        <p class="hero-copy">{hero.copy}</p>
+        <div class="cta-row">
+          <a class="button" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+          <a class="button-secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <Image
+          src={portrait}
+          alt="Jason Ochoa, neuropsicólogo y psicoterapeuta cognitivo-conductual"
+          widths={[480, 720, 960, 1200]}
+          sizes="(max-width: 900px) 92vw, 40vw"
+          quality={72}
+          format="avif"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <figcaption>Psicólogo, mención clínica. Caracas.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="authority" aria-label="Perfil profesional">
+    <div class="wrap">
+      <ul class="authority-list">
+        {authority.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Un mismo modelo</p>
+        <h2>Tres ejes que se leen juntos</h2>
+        <p class="lede">
+          La neuropsicología permite comprender el funcionamiento; la Terapia
+          Cognitivo-Conductual ofrece un marco para intervenir; y el conocimiento
+          del neurodesarrollo permite adaptar ambos a la persona, a su etapa vital
+          y a su contexto.
+        </p>
+      </div>
+      <div class="axes">
+        {
+          axes.map((axis) => (
+            <article class="axis">
+              <h3>{axis.title}</h3>
+              <p>{axis.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Trayectoria</p>
+        <h2>Una evolución, no un listado</h2>
+        <p>
+          El trabajo actual se entiende mejor si se mira cómo se fueron
+          integrando la clínica, la neuropsicología, el neurodesarrollo y la
+          formación de otros profesionales.
+        </p>
+        <a class="button-secondary" href="/sobre-mi">Leer la trayectoria</a>
+      </div>
+      <ol class="timeline">
+        {
+          trajectoryBrief.map((item) => (
+            <li class="timeline-item">
+              <h3>{item.title}</h3>
+              <p class="muted">{item.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Formación de profesionales</p>
+        <h2>Enseñar TCC es parte del oficio</h2>
+        <p>
+          Desde 2024 participa como <strong>Facilitador Docente de la Certificación
+          en Terapia Cognitivo-Conductual</strong> coordinada por la Federación de
+          Psicólogos de Venezuela. En 2025, la Junta Directiva de la FPV le otorgó
+          un Reconocimiento Especial por ese desempeño.
+        </p>
+        <p class="muted">
+          Esta línea se suma a la docencia universitaria en la Universidad
+          Metropolitana y a la formación de equipos clínicos y escolares.
+        </p>
+      </div>
+      <a class="button-secondary" href="/docencia">Ver docencia y formación</a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div>
+        <p class="kicker" style="color: var(--terracotta-soft);">CIPECC</p>
+        <h2>Dirección clínica e integración interdisciplinaria</h2>
+      </div>
+      <div>
+        <p>
+          Desde 2021 formo parte de CIPECC, donde actualmente ejerzo funciones de
+          dirección clínica. Coordino procesos de evaluación, diagnóstico e
+          intervención, reuniones clínicas y el trabajo interdisciplinario de
+          profesionales vinculados con neurodesarrollo y salud mental.
+        </p>
+        <div class="cta-row">
+          <a class="button" href={site.cipecc} rel="noopener noreferrer">Conocer CIPECC</a>
+          <a class="button-secondary" href="/contacto">Escribir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
