@@ -16,7 +16,7 @@
   --serif: "Newsreader Variable", "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
   --sans: "Source Sans 3 Variable", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
   --space: clamp(1.25rem, 3vw, 2.5rem);
-  --wide: 1180px;
+  --wide: 1360px;
   --prose: 68ch;
   --header-h: 4.25rem;
 }
@@ -101,7 +101,7 @@ a:hover {
 }
 
 .wrap {
-  width: min(var(--wide), calc(100% - 2.5rem));
+  width: min(var(--wide), calc(100% - clamp(1.5rem, 5vw, 5rem)));
   margin-inline: auto;
 }
 
@@ -121,8 +121,8 @@ h3,
 }
 
 h1 {
-  font-size: clamp(2.6rem, 7vw, 5.4rem);
-  margin: 0 0 0.4em;
+  font-size: clamp(2.45rem, 5.6vw, 4.35rem);
+  margin: 0 0 0.35em;
 }
 
 h2 {
@@ -250,14 +250,23 @@ p:last-child {
 }
 
 .hero {
-  padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+  padding: clamp(1.75rem, 4.5vw, 3.25rem) 0 clamp(1.75rem, 4vw, 2.75rem);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(1.75rem, 4.5vw, 3.75rem);
+  align-items: stretch;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+  min-height: 100%;
+  padding-block: 0.15rem 0.35rem;
 }
 
 .descriptor {
@@ -277,7 +286,11 @@ p:last-child {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+.hero-main .cta-row {
+  margin-top: 0;
 }
 
 .button,
@@ -320,7 +333,7 @@ p:last-child {
 
 .portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center 18%;
   filter: saturate(0.88) contrast(1.02);
@@ -335,37 +348,24 @@ p:last-child {
 .authority {
   border-block: 1px solid var(--line);
   background: var(--bg-elevated);
-  padding: 1.15rem 0;
+  padding: 1.35rem 0;
 }
 
 .authority-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 1.6rem;
+  justify-content: space-between;
+  gap: 0.75rem 2.25rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: var(--ink-soft);
 }
 
-.authority-list li {
-  position: relative;
-}
-
-.authority-list li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -0.95rem;
-  top: 0.45em;
-  width: 1px;
-  height: 0.85em;
-  background: var(--line);
-}
-
 .section {
-  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  padding: clamp(3rem, 6.5vw, 5rem) 0;
 }
 
 .section-head {
@@ -563,7 +563,7 @@ p:last-child {
 }
 
 .page-hero {
-  padding: clamp(3rem, 7vw, 5rem) 0 0;
+  padding: clamp(2.4rem, 5.5vw, 4rem) 0 0;
 }
 
 .page-hero h1 {
@@ -617,6 +617,13 @@ p:last-child {
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.75rem, 4vw, 3.5rem);
   align-items: start;
+}
+
+@media (min-width: 901px) {
+  .split-sticky {
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+  }
 }
 
 .contact-list {
@@ -682,17 +689,13 @@ p:last-child {
     align-items: center;
   }
 
-  .authority-list li:not(:last-child)::after {
-    display: none;
-  }
-
-  .portrait img {
-    aspect-ratio: 5 / 4;
-    object-position: center 15%;
+  .hero-main {
+    gap: 1.35rem;
+    padding-block: 0;
   }
 
   .hero .portrait {
-    margin-top: 0.5rem;
+    margin-top: 0.15rem;
   }
 
   .footer-nav {
