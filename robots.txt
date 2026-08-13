@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benji0248.github.io/jasonochoa-portfolio/sitemap-index.xml
