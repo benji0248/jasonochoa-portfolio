@@ -2,7 +2,8 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://jasonochoa.com",
+  site: "https://benji0248.github.io",
+  base: process.env.SITE_BASE || "/jasonochoa-portfolio",
   integrations: [sitemap()],
   compressHTML: true,
   build: {

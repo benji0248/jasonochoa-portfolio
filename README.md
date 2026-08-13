@@ -35,8 +35,17 @@ npm run preview
 | `/investigacion` | Línea de investigación y sociedades científicas |
 | `/contacto` | Correo, LinkedIn y CIPECC |
 
-## Despliegue
+## Despliegue — GitHub Pages
 
-El build genera `dist/`. Puede publicarse en Cloudflare Pages, Netlify o cualquier hosting estático.
+URL pública:
 
-El dominio canónico está configurado como `https://jasonochoa.com` en `astro.config.mjs` y debe actualizarse si el dominio final es otro.
+**https://benji0248.github.io/jasonochoa-portfolio/**
+
+El workflow `.github/workflows/deploy-pages.yml` publica `main` automáticamente.
+
+Para que GitHub Pages funcione en este repositorio:
+
+1. Settings → General → Change repository visibility → **Public**
+2. Settings → Pages → Source → **GitHub Actions**
+
+El `base` del sitio es `/jasonochoa-portfolio`. Para un dominio propio, cambiar `site` y `base` en `astro.config.mjs`.

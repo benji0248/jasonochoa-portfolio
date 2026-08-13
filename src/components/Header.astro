@@ -1,12 +1,13 @@
 ---
 import { nav, site } from "../data/site";
+import { currentPath, withBase } from "../lib/paths";
 
-const current = Astro.url.pathname;
+const current = currentPath(Astro.url.pathname);
 ---
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/">{site.name}</a>
+    <a class="brand" href={withBase("/")}>{site.name}</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
       Menú
     </button>
@@ -14,7 +15,7 @@ const current = Astro.url.pathname;
       {
         nav.map((item) => (
           <a
-            href={item.href}
+            href={withBase(item.href)}
             aria-current={
               item.href === "/"
                 ? current === "/"

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jasonochoa.com/sitemap-index.xml
+Sitemap: https://benji0248.github.io/jasonochoa-portfolio/sitemap-index.xml

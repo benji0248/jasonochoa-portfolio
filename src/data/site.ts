@@ -4,7 +4,7 @@ export const site = {
   title: "Jason Ochoa | Neuropsicología, TCC y Neurodesarrollo",
   description:
     "Jason Ochoa es neuropsicólogo y psicoterapeuta cognitivo-conductual especializado en neurodesarrollo, TEA, TDAH, evaluación, docencia e investigación.",
-  url: "https://jasonochoa.com",
+  url: "https://benji0248.github.io/jasonochoa-portfolio",
   locale: "es_VE",
   email: "jasonochoa@gmail.com",
   location: "Caracas, Venezuela",

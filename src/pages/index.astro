@@ -10,6 +10,7 @@ import {
   site,
   trajectoryBrief,
 } from "../data/site";
+import { withBase } from "../lib/paths";
 ---
 
 <BaseLayout path="/">
@@ -23,8 +24,8 @@ import {
         <p class="descriptor">{hero.descriptor}</p>
         <p class="hero-copy">{hero.copy}</p>
         <div class="cta-row">
-          <a class="button" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
-          <a class="button-secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+          <a class="button" href={withBase(hero.primaryCta.href)}>{hero.primaryCta.label}</a>
+          <a class="button-secondary" href={withBase(hero.secondaryCta.href)}>{hero.secondaryCta.label}</a>
         </div>
       </div>
       <figure class="portrait">
@@ -86,7 +87,7 @@ import {
           integrando la clínica, la neuropsicología, el neurodesarrollo y la
           formación de otros profesionales.
         </p>
-        <a class="button-secondary" href="/sobre-mi">Leer la trayectoria</a>
+        <a class="button-secondary" href={withBase("/sobre-mi")}>Leer la trayectoria</a>
       </div>
       <ol class="timeline">
         {
@@ -117,7 +118,7 @@ import {
           Metropolitana y a la formación de equipos clínicos y escolares.
         </p>
       </div>
-      <a class="button-secondary" href="/docencia">Ver docencia y formación</a>
+      <a class="button-secondary" href={withBase("/docencia")}>Ver docencia y formación</a>
     </div>
   </section>
 
@@ -139,7 +140,7 @@ import {
             Conocer CIPECC
             <span class="visually-hidden"> (se abre en una pestaña nueva)</span>
           </a>
-          <a class="button-secondary" href="/contacto">Escribir</a>
+          <a class="button-secondary" href={withBase("/contacto")}>Escribir</a>
         </div>
       </div>
     </div>
